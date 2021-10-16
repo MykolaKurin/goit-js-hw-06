@@ -1,16 +1,14 @@
-const randomColor = document.querySelector(".widget");
-randomColor.addEventListener("click", onButtonClick);
-
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
 }
 
-function onButtonClick(evt) {
-  if (!evt.target.classList.contains("changeColor")) {
-  const color = getRandomHexColor();
-  document.body.style.background = color;
-  return;
-  }
+const onButtonClick = () => {
+    const color = getRandomHexColor();
+    document.body.style.background = color;
+    colorNameSpanRef.textContent = color;
 }
 
-console.log();
+const colorNameSpanRef = document.querySelector(".color");
+
+const changeColorButtonRef = document.querySelector(".change-color");
+changeColorButtonRef.addEventListener("click", onButtonClick);
