@@ -1,11 +1,23 @@
-const loginForm = document.querySelector('form.login-form');
-
 function onFormSubmit(event) {
     event.preventDefault();
-    const loginFormRef = event.currentTarget.elements;
-    const email = loginFormRef.email.value;
-    const password = loginFormRef.password.value;
-    form.addEventListener('submit', onFormSubmit);
-};
+    const elements = event.currentTarget.elements;
+    const email = elements.email.value;
+    const password = elements.password.value;
     
-console.log(loginForm);
+    if (email === '') {
+        alert('No e-mail');
+    } else if (password === '') {
+        alert('No password');
+    } else {
+        const formResult = {
+            email: email,
+            password: password,
+        };
+        console.log(formResult);
+        
+        event.currentTarget.reset();
+    }
+};
+
+const loginFormRef = document.querySelector('form.login-form');
+loginFormRef.addEventListener('submit', onFormSubmit);

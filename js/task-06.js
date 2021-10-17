@@ -9,8 +9,6 @@ function onInputRefAuditLength(event) {
         inputRef.classList.add('valid');
     } else {
         inputRef.classList.remove('valid');
-        inputRef.classList.add('invalid');
-              
+        inputRef.classList.add('invalid');         
     }
-};
-//console.log(inputRefLength);
+}
