@@ -4,10 +4,8 @@ function onFormSubmit(event) {
     const email = elements.email.value;
     const password = elements.password.value;
     
-    if (email === '') {
-        alert('No e-mail');
-    } else if (password === '') {
-        alert('No password');
+    if (email === '' || password === '') {
+        alert('No e-mail or password!');
     } else {
         const formResult = {
             email: email,
